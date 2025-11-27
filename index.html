@@ -4,8 +4,6 @@
   <meta charset="UTF-8" />
   <title>RRR Calculator</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="https://cdn.jsdelivr.net/pyodide/v0.26.0/full/pyodide.js"></script>
-
 </head>
 <body>
   <div class="form-container">
@@ -13,22 +11,7 @@
     <div id="question-container" class="fade"></div>
     <div id="result" class="result hidden"></div>
   </div>
-  
-  <script src="main.js"></script>
-  <script>
-    let pyodide;
 
-    async function loadPy() {
-      pyodide = await loadPyodide();
-      // Load rrr.py from same folder
-      const rrrCode = await (await fetch("rrr.py")).text();
-      await pyodide.runPythonAsync(rrrCode);
-}
-
-loadPy();
-</script>
-
+  <script src="script.js"></script>
 </body>
 </html>
-
-
